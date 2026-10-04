@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>antojos favoritos</title>
+    <link rel="stylesheet" href="antojos_favoritos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="antojos_favoritos.js" defer></script>
+</head>
+<body>
+    <!-------------------------------------->
+    <!--|estructuracion_antojos_favoritos|-->
+    <!-------------------------------------->
+    <header class="encabezado">
+        <h1>Antojos Favoritos</h1>
+        <p>Marca las comidas que se te antojan y agrega las tuyas.</p>
+    </header>
+    <!-- Fin del encabezado -->
+    <!-- Aquí empieza lo demás -->
+    <!-- Contenido principal de la página -->
+    <!-- Contiene cuatro paneles con fondo blanco -->
+    <!-- Cada panel es una sección independiente -->
+    <main>
+        <!-- Panel con las instrucciones de uso -->
+        <section class="panel">
+            <!-- Título del panel -->
+            <h2>Cómo usar esta página</h2>
+            <!-- Lista numerada con los pasos -->
+            <ol>
+                <!-- Paso 1 -->
+                <li>Pulsa una comida para elegirla o quitarla.</li>
+                <!-- Paso 2 -->
+                <li>Agrega tus propios antojos con el campo de texto.</li>
+                <!-- Paso 3 -->
+                <li>Mira el resumen de tus favoritos al final.</li>
+            </ol>
+        </section>
+        <!-- Fin de las instrucciones -->
+        <!-- Panel para agregar un antojo nuevo -->
+        <section class="panel">
+            <!-- Título del panel -->
+            <h2>Agregar un antojo</h2>
+            <!-- Fila con el campo de texto y el botón -->
+            <div class="fila">
+                <!-- Campo donde se escribe el nombre de la comida -->
+                <input
+                    type="text"
+                    id="nuevo"
+                    placeholder="Ej: Patacón con queso"
+                    maxlength="30"
+                >
+                <!-- Botón que agrega la comida a la lista -->
+                <button id="btnAgregar">Agregar</button>
+            </div>
+            <!-- Aquí JavaScript muestra mensajes de error -->
+            <p id="mensaje"></p>
+        </section>
+        <!-- Fin del panel para agregar -->
+        <!-- Panel con la lista de comidas seleccionables -->
+        <section class="panel">
+            <!-- Título del panel -->
+            <h2>Elige tus antojos</h2>
+            <!-- Texto con la cantidad de antojos elegidos -->
+            <p id="contador"></p>
+            <!-- Lista donde JavaScript dibuja las comidas -->
+            <ul id="lista"></ul>
+            <!-- Fila con los botones de selección -->
+            <div class="fila">
+                <!-- Botón que marca todas las comidas -->
+                <button id="btnTodos">Elegir todos</button>
+                <!-- Botón que desmarca todas las comidas -->
+                <button id="btnLimpiar" class="secundario">Quitar selección</button>
+            </div>
+        </section>
+        <!-- Fin de la lista -->
+        <!-- Panel con el resumen de lo elegido -->
+        <section class="panel">
+            <!-- Título del panel -->
+            <h2>Mis favoritos</h2>
+            <!-- Aquí JavaScript escribe los antojos elegidos -->
+            <p id="resumen"></p>
+        </section>
+        <!-- Fin del resumen -->
+    </main>
+</body>
+</html>

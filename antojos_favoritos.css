@@ -1,0 +1,80 @@
+/* ===== Variables de color ===== */
+:root {
+  --fondo: #fdeef3;      /* fondo general rosado suave */
+  --tinta: #3a1c2b;      /* color del texto */
+  --blanco: #ffffff;     /* fondo de los paneles */
+  --frambuesa: #e0407b;  /* color principal */
+  --borde: #f1cddb;      /* color de bordes suaves */
+  --rojo: #c62e3d;       /* mensajes de error */
+}
+/* ===== Reinicio básico de márgenes ===== */
+* {
+    box-sizing: border-box; /* el padding no agranda los elementos */
+    margin: 0;
+    padding: 0;
+}
+/* ===== Estilo general del cuerpo ===== */
+body { font-family: "Trebuchet MS", Verdana, sans-serif; background: var(--fondo); color: var(--tinta); line-height: 1.5; }
+/* ===== Encabezado ===== */
+.encabezado { background: var(--frambuesa); color: var(--blanco); text-align: center; padding: 40px 20px; }
+.encabezado h1 { font-size: 2.5rem; margin-bottom: 8px; }
+/* ===== Contenedor central ===== */
+main { max-width: 760px; margin: 0 auto; padding: 30px 20px 50px; }
+/* ===== Paneles blancos ===== */
+.panel {
+    background: var(--blanco);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+/* ===== Fila con elementos en horizontal ===== */
+.fila { display: flex; flex-wrap: wrap; gap: 10px; }
+/* ===== Lista numerada de instrucciones ===== */
+.panel ol { padding-left: 20px; }
+/* ===== Campo de texto ===== */
+input[type="text"] {
+    flex: 1;
+    min-width: 180px;
+    padding: 10px 12px;
+    border: 2px solid var(--borde);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+/* Borde visible al escribir o navegar con el teclado */
+input:focus-visible, button:focus-visible { outline: 3px solid var(--tinta); }
+/* ===== Botones ===== */
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    background: var(--frambuesa);
+    color: var(--blanco);
+    font-size: 1rem;
+    cursor: pointer;
+}
+button:hover { opacity: 0.85; }
+/* Botón con aspecto más discreto */
+.secundario { background: transparent; color: var(--tinta); border: 2px solid var(--borde); }
+/* ===== Mensaje de error ===== */
+#mensaje { color: var(--rojo); min-height: 1.5em; }
+/* ===== Lista de comidas en cuadrícula ===== */
+#lista { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+/* Cada comida es una etiqueta que se puede pulsar */
+.antojo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px;
+    border: 2px solid var(--borde);
+    border-radius: 10px;
+    cursor: pointer;
+}
+/* Comida elegida (la clase la agrega JavaScript) */
+.antojo.elegido { background: var(--frambuesa); border-color: var(--frambuesa); color: var(--blanco); }
+/* Tamaño de la casilla de cada comida */
+.antojo input { width: 20px; height: 20px; accent-color: var(--tinta); }
+/* ===== Texto auxiliar ===== */
+#contador, #resumen { color: #7a5568; }
